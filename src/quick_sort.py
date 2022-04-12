@@ -8,7 +8,16 @@ class Solution:
         if start >= end:
             return
 
-        p = randrange(0, end)
+        # rand a p
+        # swap num_p and num_end
+        p = randrange(start, end+1)
+
+        temp = nums[p]
+        nums[p] = nums[end]
+        nums[end] = temp
+
+        # continue
+        p = end
         j = start
         i = start-1
 
@@ -43,4 +52,4 @@ print(example.quickSort([10, 80, 30, 90, 40, 50, 70])) # => [10, 30, 40, 50, 70,
 print(example.quickSort([])) # => []
 print(example.quickSort([3])) # => [3]
 print(example.quickSort([3, 1, 3, 40, 5])) # => [1, 3, 3, 5, 40]
-print(example.quickSort([3, 1, 3])) # => [1, 3]
+print(example.quickSort([3, 1, 3])) # => [1, 3, 3]
