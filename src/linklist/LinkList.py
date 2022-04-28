@@ -15,6 +15,13 @@ class LinkList:
   def __init__(self, nodes: List[Node]):
     self.tail = nodes[len(nodes)-1]
     self.head = nodes[0]
+    i = 0
+    while i < len(nodes):
+        n1 = nodes[i]
+        n2 = nodes[i+1]
+        n1.next = n2
+        n2.prev = n1
+        i = i+1
 
   def print(self):
     p = self.head
