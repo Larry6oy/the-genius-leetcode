@@ -12,7 +12,10 @@ class Node:
     print("Hello my value is", self.value)
 
 class LinkList:
-  def __init__(self, nodes: List[Node]):
+  def __init__(self, nums: List[int]):
+      self.___init__([no])
+
+  def ___init__(self, nodes: List[Node]):
     self.tail = nodes[len(nodes)-1]
     self.head = nodes[0]
     i = 0
@@ -41,6 +44,7 @@ p5 = Node(9)
 
 
 
-l1= LinkList([p1, p2, p3, p4, p5])
+#l1= LinkList([p1, p2, p3, p4, p5])
+l1 = LinkList([4, 2, 3, 1, 9])
 l1.print()
 # l1.print() # 4 -> 2
