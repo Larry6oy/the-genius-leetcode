@@ -12,28 +12,34 @@ class Node:
     print("Hello my value is", self.value)
 
 class LinkList:
-  def __init__(self, nums: List[int]):
-      self.___init__([no])
+    def __init__(self, nums: List[int]):
+        nodes = []
+        x = 0
+        while x < len(nums)-1:
+            nx = Node(nums[x])
+            nodes.append(nx)
+            x = x+1
+        self.___init__(nodes)
 
-  def ___init__(self, nodes: List[Node]):
-    self.tail = nodes[len(nodes)-1]
-    self.head = nodes[0]
-    i = 0
-    while i < len(nodes):
-        n1 = nodes[i]
-        n2 = nodes[i+1]
-        n1.next = n2
-        n2.prev = n1
-        i = i+1
+    def ___init__(self, nodes: List[Node]):
+        self.tail = nodes[len(nodes)-1]
+        self.head = nodes[0]
+        i = 0
+        while i < len(nodes):
+            n1 = nodes[i]
+            n2 = nodes[i+1]
+            n1.next = n2
+            n2.prev = n1
+            i = i+1
 
-  def print(self):
-    p = self.head
-    strs = [ ]
-    while p != None:
-        strs.append(str(p.value))
-        p = p.next
+    def print(self):
+        p = self.head
+        strs = [ ]
+        while p != None:
+            strs.append(str(p.value))
+            p = p.next
         
-    print( 'Hello!  I am a list.  My values are', ' -> '.join(strs))
+        print( 'Hello!  I am a list.  My values are', ' -> '.join(strs))
 
 # execution
 p1 = Node(4)
