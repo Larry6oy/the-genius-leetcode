@@ -15,7 +15,7 @@ class LinkList:
     def __init__(self, nums: List[int]):
         nodes = []
         x = 0
-        while x < len(nums)-1:
+        while x < len(nums):
             nx = Node(nums[x])
             nodes.append(nx)
             x = x+1
@@ -25,7 +25,7 @@ class LinkList:
         self.tail = nodes[len(nodes)-1]
         self.head = nodes[0]
         i = 0
-        while i < len(nodes):
+        while i < len(nodes)-1:
             n1 = nodes[i]
             n2 = nodes[i+1]
             n1.next = n2
