@@ -8,9 +8,6 @@ class Node:
     self.prev = None
     self.next = None
 
-  def print(self):
-    print("Hello my value is", self.value)
-
 class LinkList:
     def __init__(self, nums: List[int]):
         nodes = []
@@ -19,9 +16,6 @@ class LinkList:
             nx = Node(nums[x])
             nodes.append(nx)
             x = x+1
-        self.___init__(nodes)
-
-    def ___init__(self, nodes: List[Node]):
         self.tail = nodes[len(nodes)-1]
         self.head = nodes[0]
         i = 0
@@ -31,6 +25,11 @@ class LinkList:
             n1.next = n2
             n2.prev = n1
             i = i+1
+
+#    def reverse(self, nodes: List(Node)):
+ #       a = 0
+#        z = len(nodes)-1
+
 
     def print(self):
         p = self.head
