@@ -1,4 +1,5 @@
 
+from email import header
 from multiprocessing.sharedctypes import Value
 from typing import List
 
@@ -40,6 +41,25 @@ class LinkList:
             curr.value = '我不会， 长大后在学习！'
 
         return curr.value
+    
+
+    def swap(self, p1: Node, p2: Node):
+        p1n = p1.next
+        p1p = p1.prev
+        p2n = p2.next
+        p2p = p2.next
+        if p1n == p2:
+            p1.prev = p2
+            p2.next = p1
+        else:
+            p1.prev = p2p
+            p2.next = p1n
+        p1.next = p2n
+        p2.prev = p1p
+        if self.head == p1:
+            self.head = p2
+        if self.tail == p2:
+            self.tail = p1
         
 
     def reverse(self):
@@ -74,7 +94,7 @@ pp3 = Node(2)
 
 
 #l1= LinkList([p1, p2, p3, p4, p5])
-l1 = LinkList([1, 3, 2])
+l1 = LinkList([1, 3])
 l1.print()
 #print(l1.getval(4))
 #print(l1.getval(0))
@@ -82,7 +102,10 @@ l1.print()
 #print(l1.getval(3))
 #print(l1.getval(6))
 #print(l1.getval(-1))
-l1.reverse()
+#l1.reverse()
+l1.print()
+#l1.swap(l1.head, l1.tail)
+l1.swap(l1.tail, l1.head)
 l1.print()
 
 #[9, 1, 3, 2, 4]
