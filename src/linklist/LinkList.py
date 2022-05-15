@@ -51,15 +51,27 @@ class LinkList:
         if p1n == p2:
             p1.prev = p2
             p2.next = p1
+            p1.next = p2n
+            p2.prev = p1p
+        elif p1p == p2:
+            p1.next = p2
+            p2.prev = p1
+            p1.prev = p2p
+            p2.next = p1n
         else:
             p1.prev = p2p
             p2.next = p1n
-        p1.next = p2n
-        p2.prev = p1p
+            p1.next = p2n
+            p2.prev = p1p
+            
         if self.head == p1:
             self.head = p2
+        elif self.head == p2:
+            self.head = p1
         if self.tail == p2:
             self.tail = p1
+        elif self.tail == p1:
+            self.tail = p2
         
 
     def reverse(self):
