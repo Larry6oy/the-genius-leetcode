@@ -63,7 +63,7 @@ class LinkList:
             p2.next = p1n
             p1.next = p2n
             p2.prev = p1p
-            
+
         if self.head == p1:
             self.head = p2
         elif self.head == p2:
@@ -75,13 +75,19 @@ class LinkList:
         
 
     def reverse(self):
-        temp = self.head
-        self.head = self.tail
-        self.tail = temp
-        self.head.next = self.tail
-        self.tail.prev = self.head
-        self.head.prev = None
-        self.tail.next = None
+        p = self.head
+        r = self.tail
+        #print(r.value)
+        while r.next != p and r != p:
+            self.swap(p, r)
+            temp = p
+            p = r
+            r = temp
+            #self.print()
+            print(p.value, r.value)
+            p = p.next
+            r = r.prev
+            print(p.value, r.value)
 
 
     def print(self):
@@ -106,7 +112,7 @@ pp3 = Node(2)
 
 
 #l1= LinkList([p1, p2, p3, p4, p5])
-l1 = LinkList([1, 3])
+l1 = LinkList([1, 3, 2])
 l1.print()
 #print(l1.getval(4))
 #print(l1.getval(0))
@@ -115,9 +121,8 @@ l1.print()
 #print(l1.getval(6))
 #print(l1.getval(-1))
 #l1.reverse()
-l1.print()
-#l1.swap(l1.head, l1.tail)
-l1.swap(l1.tail, l1.head)
+l1.swap(l1.head, l1.tail)
+#l1.reverse()
 l1.print()
 
 #[9, 1, 3, 2, 4]
